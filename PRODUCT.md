@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS (single `index.html` + `images/`), hosted on Netlify.
+Static HTML/CSS (single `index.html` + `images/`), hosted on Vercel (static, no build step).
 
 ## Users
 
