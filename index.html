@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hélène Avenard-Martin – Sage-femme à Grand-Champ</title>
+  <meta name="description" content="Informations pratiques sur le cabinet d'Hélène Avenard-Martin, sage-femme à Grand-Champ (56390) : adresse, horaires, accès, actes pratiqués, tarifs et prise de rendez-vous.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f1;
+      --surface: #ffffff;
+      --sage: #a9c3a6;
+      --sage-soft: #e6efe2;
+      --sage-deep: #4f6b4c;
+      --clay: #e9cfc0;
+      --clay-soft: #f7ebe3;
+      --sky-soft: #e4edf1;
+      --text: #2f3a2e;
+      --muted: #5f6b5d;
+      --line: #e3ddd2;
+      --focus: #4f6b4c;
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1d221c;
+        --surface: #262c25;
+        --sage: #6f8f6c;
+        --sage-soft: #2f3a2e;
+        --sage-deep: #b9d4b5;
+        --clay: #7a5a4b;
+        --clay-soft: #3a302b;
+        --sky-soft: #2a3438;
+        --text: #ece8df;
+        --muted: #b7b4aa;
+        --line: #3a4239;
+        --focus: #b9d4b5;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Nunito Sans", system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0 0 .6em; }
+    h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); color: var(--sage-deep); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 1em; }
+    a { color: var(--sage-deep); }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+    /* En-tête */
+    header.site {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+    .brand { font-family: "Fraunces", serif; font-weight: 600; text-decoration: none; color: var(--text); display: flex; align-items: center; gap: 10px; }
+    .brand svg { flex: none; }
+    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: .95rem; }
+    nav a:hover { color: var(--sage-deep); }
+    @media (max-width: 760px) { nav { display: none; } }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--sage-deep); color: var(--bg);
+      padding: 12px 20px; border-radius: 999px;
+      text-decoration: none; font-weight: 700; font-size: .98rem;
+      border: 2px solid var(--sage-deep);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.ghost { background: transparent; color: var(--sage-deep); }
+    .btn.small { padding: 8px 14px; font-size: .9rem; }
+
+    /* Présentation */
+    .hero { padding: 64px 0 48px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: auto -120px -160px auto;
+      width: 420px; height: 420px; border-radius: 50%;
+      background: radial-gradient(circle, var(--clay-soft), transparent 70%);
+      z-index: -1;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: -140px auto auto -140px;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, var(--sage-soft), transparent 70%);
+      z-index: -1;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; color: var(--muted); margin-bottom: .8em; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); }
+    .hero .lead { font-size: 1.15rem; color: var(--muted); max-width: 46ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 40px; }
+    .fact { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+    .fact strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+
+    section { padding: 56px 0; }
+    section.tint { background: var(--sage-soft); }
+    section.tint-clay { background: var(--clay-soft); }
+
+    /* Actes */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .card ul { margin: 0; padding-left: 1.1em; }
+    .card li { margin-bottom: .35em; }
+    .card .icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 14px; }
+    .icon.sage { background: var(--sage-soft); color: var(--sage-deep); }
+    .icon.clay { background: var(--clay-soft); color: var(--sage-deep); }
+    .icon.sky { background: var(--sky-soft); color: var(--sage-deep); }
+
+    /* Parcours */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+    .timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--sage); }
+    .timeline li { padding: 0 0 16px 18px; position: relative; }
+    .timeline li::before { content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--sage-deep); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+    .tags li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .93rem; }
+
+    /* Infos pratiques */
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+    th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+    th { font-weight: 600; width: 45%; }
+    .note { font-size: .92rem; color: var(--muted); }
+
+    /* Carte */
+    .map-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; align-items: stretch; }
+    @media (max-width: 760px) { .map-grid { grid-template-columns: 1fr; } }
+    .map-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 340px; background: var(--surface); }
+    .map-frame iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
+    address { font-style: normal; font-size: 1.1rem; margin-bottom: 1em; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+    /* Urgences */
+    .alert { background: var(--surface); border: 2px solid var(--clay); border-radius: var(--radius); padding: 20px 24px; }
+    .alert p:last-child { margin: 0; }
+
+    footer { padding: 40px 0 56px; border-top: 1px solid var(--line); font-size: .92rem; color: var(--muted); }
+    footer h2 { font-size: 1.1rem; color: var(--text); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29C9 23 5 17 7 10c4 0 7 3 9 7 2-4 5-7 9-7 2 7-2 13-9 19z" fill="#a9c3a6"/><path d="M16 29V14" stroke="#4f6b4c" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Hélène Avenard-Martin
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#actes">Actes</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#infos">Infos pratiques</a></li>
+        <li><a href="#acces">Accès</a></li>
+      </ul>
+    </nav>
+    <a class="btn small" href="https://www.doctolib.fr/sage-femme/grand-champ/helene-avenard-martin" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Présentation -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Sage-femme · Grand-Champ (Morbihan)</p>
+      <h1>Hélène Avenard-Martin</h1>
+      <p class="lead">Sage-femme libérale conventionnée. Consultations sur rendez-vous au cabinet, 90 rue Marie Curie à Grand-Champ.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://www.doctolib.fr/sage-femme/grand-champ/helene-avenard-martin" target="_blank" rel="noopener">
+          Réserver sur Doctolib
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="btn ghost" href="tel:+33688369569">06 88 36 95 69</a>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><strong>Adresse</strong>90 rue Marie Curie<br>56390 Grand-Champ</div>
+        <div class="fact"><strong>Horaires</strong>Lun – ven : 8h30 – 18h30<br>Samedi : 9h00 – 12h00</div>
+        <div class="fact"><strong>Conventionnement</strong>Conventionnée<br>Carte Vitale acceptée</div>
+        <div class="fact"><strong>Accès</strong>Rez-de-chaussée<br>Parking gratuit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actes pratiqués -->
+  <section id="actes" class="tint">
+    <div class="wrap">
+      <h2>Actes pratiqués au cabinet</h2>
+      <p>Liste des consultations et actes proposés par le cabinet, tels qu'ils figurent sur le profil de prise de rendez-vous.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="icon sage" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg>
+          </div>
+          <h3>Suivi gynécologique</h3>
+          <ul>
+            <li>Consultation de prévention</li>
+            <li>Frottis de dépistage</li>
+            <li>Contraception : pose et retrait de stérilet et d'implant</li>
+            <li>Prescription de mammographie</li>
+            <li>Dépistage et traitement des infections sexuellement transmissibles</li>
+            <li>IVG médicamenteuse</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon clay" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-5-3-8-7-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 11z"/></svg>
+          </div>
+          <h3>Grossesse et après la naissance</h3>
+          <ul>
+            <li>Consultation pré-conceptionnelle</li>
+            <li>Déclaration de grossesse</li>
+            <li>Consultations de suivi de grossesse</li>
+            <li>Entretien prénatal</li>
+            <li>Préparation à la naissance</li>
+            <li>Monitoring (surveillance fœtale)</li>
+            <li>Accompagnement de l'allaitement</li>
+            <li>Visite post-natale</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon sky" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg>
+          </div>
+          <h3>Rééducation et soins</h3>
+          <ul>
+            <li>Rééducation périnéale</li>
+            <li>Séances de técarthérapie pour les cicatrices douloureuses (périnée, césarienne)</li>
+            <li>Prise en charge des vulvodynies</li>
+            <li>Engorgement mammaire</li>
+          </ul>
+          <p class="note" style="margin-top:1em">Le cabinet est équipé d'un appareil d'électrostimulation et d'un appareil de técarthérapie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section id="parcours">
+    <div class="wrap two-col">
+      <div>
+        <h2>Parcours professionnel</h2>
+        <ul class="timeline">
+          <li><strong>1998</strong> — Diplôme d'État de sage-femme, école de sages-femmes de Montpellier.</li>
+          <li><strong>Plus de 20 ans</strong> — Exercice au CHU Carémeau de Nîmes : salle de naissance, maternité, grossesses pathologiques et consultations.</li>
+          <li><strong>Aujourd'hui</strong> — Exercice libéral à Grand-Champ.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Diplômes et formations</h2>
+        <ul class="tags">
+          <li>Diplôme d'État de sage-femme</li>
+          <li>DU Prévention et suivi gynécologique pour sages-femmes</li>
+          <li>Suivi gynécologique et contraception</li>
+          <li>IVG médicamenteuse (REIVOC)</li>
+          <li>Allaitement</li>
+          <li>Hypnose et douleur aiguë</li>
+          <li>Yoga pré et post-natal (méthode De Gasquet)</li>
+          <li>Méthode proprioceptive pelvi-périnéale</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infos pratiques -->
+  <section id="infos" class="tint-clay">
+    <div class="wrap two-col">
+      <div>
+        <h2>Horaires d'ouverture</h2>
+        <table>
+          <caption class="sr-only">Horaires du cabinet</caption>
+          <tbody>
+            <tr><th scope="row">Lundi</th><td>8h30 – 18h30</td></tr>
+            <tr><th scope="row">Mardi</th><td>8h30 – 18h30</td></tr>
+            <tr><th scope="row">Mercredi</th><td>8h30 – 18h30</td></tr>
+            <tr><th scope="row">Jeudi</th><td>8h30 – 18h30</td></tr>
+            <tr><th scope="row">Vendredi</th><td>8h30 – 18h30</td></tr>
+            <tr><th scope="row">Samedi</th><td>9h00 – 12h00</td></tr>
+            <tr><th scope="row">Dimanche</th><td>Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="note" style="margin-top:.8em">Consultations sur rendez-vous uniquement.</p>
+      </div>
+      <div>
+        <h2>Tarifs et remboursement</h2>
+        <table>
+          <caption class="sr-only">Tarifs et modalités</caption>
+          <tbody>
+            <tr><th scope="row">Conventionnement</th><td>Sage-femme conventionnée</td></tr>
+            <tr><th scope="row">Consultation gynécologique</th><td>26,50 €</td></tr>
+            <tr><th scope="row">Carte Vitale</th><td>Acceptée</td></tr>
+            <tr><th scope="row">Moyens de paiement</th><td>Espèces, chèque, carte bancaire</td></tr>
+          </tbody>
+        </table>
+        <p class="note" style="margin-top:.8em">Les autres actes sont facturés selon les tarifs conventionnels de l'Assurance Maladie. Pour connaître la prise en charge, consultez <a href="https://www.ameli.fr/assure/remboursements/rembourse/consultations/sage-femme" target="_blank" rel="noopener">ameli.fr</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accès -->
+  <section id="acces">
+    <div class="wrap">
+      <h2>Venir au cabinet</h2>
+      <div class="map-grid">
+        <div>
+          <address>
+            <strong>Cabinet de sage-femme</strong><br>
+            90 rue Marie Curie<br>
+            56390 Grand-Champ
+          </address>
+          <ul>
+            <li>Cabinet de plain-pied (rez-de-chaussée)</li>
+            <li>Stationnement gratuit à proximité</li>
+          </ul>
+          <h3 style="margin-top:1.4em">Contact</h3>
+          <p>
+            Téléphone : <a href="tel:+33688369569">06 88 36 95 69</a><br>
+            E-mail : <a href="mailto:havenardmartin@gmail.com">havenardmartin@gmail.com</a>
+          </p>
+          <div class="links">
+            <a class="btn small" href="https://www.doctolib.fr/sage-femme/grand-champ/helene-avenard-martin" target="_blank" rel="noopener">Réserver</a>
+            <a class="btn small ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=90+rue+Marie+Curie+56390+Grand-Champ" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="btn small ghost" href="https://www.openstreetmap.org/search?query=90%20rue%20Marie%20Curie%2056390%20Grand-Champ" target="_blank" rel="noopener">OpenStreetMap</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe
+            title="Carte : 90 rue Marie Curie, 56390 Grand-Champ"
+            src="https://maps.google.com/maps?q=90%20rue%20Marie%20Curie%2C%2056390%20Grand-Champ&amp;z=16&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgences -->
+  <section class="tint" style="padding:40px 0">
+    <div class="wrap">
+      <div class="alert" role="note">
+        <h2 style="font-size:1.3rem">En cas d'urgence</h2>
+        <p>En cas d'urgence médicale, composez le <strong><a href="tel:15">15</a></strong> (SAMU) ou le <strong><a href="tel:112">112</a></strong> (numéro d'urgence européen). Pendant la grossesse, vous pouvez aussi vous rendre directement aux urgences de la maternité où vous êtes inscrite.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap two-col">
+    <div>
+      <h2>À propos de cette page</h2>
+      <p>Cette page a pour seul objet l'information des patientes et patients sur l'activité du cabinet, conformément au code de déontologie des sages-femmes (code de la santé publique). Elle ne contient ni avis, ni témoignage, ni comparaison avec d'autres professionnels.</p>
+      <p>Pour en savoir plus sur les compétences des sages-femmes : <a href="https://www.ordre-sages-femmes.fr/" target="_blank" rel="noopener">Ordre des sages-femmes</a>.</p>
+    </div>
+    <div>
+      <h2>Mentions légales</h2>
+      <p>
+        Responsable de la publication : Hélène Avenard-Martin, sage-femme<br>
+        90 rue Marie Curie, 56390 Grand-Champ<br>
+        <!-- À compléter : numéro RPPS et hébergeur du site avant mise en ligne -->
+        N° RPPS : <em>à compléter</em><br>
+        Hébergeur : <em>à compléter</em>
+      </p>
+      <p>La carte intégrée est fournie par Google Maps, soumis à ses propres conditions d'utilisation.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
